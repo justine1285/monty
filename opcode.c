@@ -8,7 +8,7 @@ void (*get_ops(char *opcode))(stack_t **, unsigned int)
 {
 	int k = 0;
 
-	instruction_t op_list[]= {
+	instruction_t op_list[] = {
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},

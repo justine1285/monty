@@ -46,7 +46,7 @@ typedef struct instruction_s
  */
 typedef struct monty_s
 {
-	unsigned int ln;
+	unsigned int line_num;
 	char *arg;
 	stack_t *stack;
 } monty_t;

@@ -62,11 +62,11 @@ int main(int arc, char **arv)
 			func = get_ops(opcode);
 			if (!func)
 			{
-				dprint(2, "L%d: unknown instruction %s\n",monty.ln, opcode);
+				dprint(2, "L%d: unknown instruction %s\n", monty.line_num, opcode);
 				exit(EXIT_FAILURE);
 			}
 			monty.arg = strtok(NULL, DELIM);
-			func(&monty.stack, monty.ln);
+			func(&monty.stack, monty.line_num);
 		}
 	}
 	free(lineptr);
