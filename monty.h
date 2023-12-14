@@ -52,21 +52,22 @@ typedef struct monty_s
 } monty_t;
 
 /* in monty.c */
-FILE *check_args(int, char **);
-void (*get_ops(char *))(stack_t **, unsigned int);
+FILE *check_args(int arc, char **arv);
+int main(int arc, char **arv);
+void (*get_ops(char *opcode))(stack_t **, unsigned int);
 void init_monty(void);
 
 /* in utility.c */
-int _isdigit(char *);
+int _isdigit(char *str);
 
 extern monty_t monty;
 monty_t monty;
 
 /* operations */
-void push(stack_t **, unsigned int);
-void pall(stack_t **, unsigned int);
-void pint(stack_t **, unsigned int);
-void pop(stack_t **, unsigned int);
-void swap(stack_t **, unsigned int);
+void push(stack_t **, unsigned int line_num);
+void pall(stack_t **, unsigned int line_num);
+void pint(stack_t **, unsigned int line_num);
+void pop(stack_t **, unsigned int line_num);
+void swap(stack_t **, unsigned int line_num);
 
 #endif
