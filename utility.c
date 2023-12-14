@@ -12,7 +12,7 @@ int _isdigit(char *str)
 
 	while (str[k])
 	{
-		if (!(isdigit(str[k])))
+		if (!(_isdigit(str[k])))
 			return (-1);
 		k++;
 	}
