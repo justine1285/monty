@@ -59,10 +59,11 @@ void pall(stack_t **stack, unsigned int line_num)
  * pint - prints element at the top of a list
  * @stack: double pointer to head node of list
  * @line_num: line number of bytecode file
+ * Return: no return
  */
 void pint(stack_t **stack, unsigned int line_num)
 {
-	if (!(*stack))
+	if (*stack == NULL)
 	{
 		dprintf(STDERR_FILENO, "L%u: can't pint, stack empty\n", line_num);
 		exit(EXIT_FAILURE);
