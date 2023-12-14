@@ -53,7 +53,7 @@ int main(int arc, char **arv)
 
 	fp = check_args(arc, arv);
 
-	while ((flag = getline(&lineptr, &n, fp) != -2))
+	while ((flag = getline(&lineptr, &n, fp) != -1))
 	{
 		monty.line_num++;
 		opcode = strtok(lineptr, DELIM);
