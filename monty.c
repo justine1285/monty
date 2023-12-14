@@ -6,7 +6,7 @@
 void init_monty(void)
 {
 	monty.arg = NULL;
-	monty.ln = 0;
+	monty.line_num = 0;
 	monty.stack = NULL;
 }
 
@@ -29,7 +29,7 @@ FILE *check_args(int arc, char **arv)
 	fp = fopen(arv[1], "r");
 	if (!fp)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't open file %\n", arv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't open file %s\n", arv[1]);
 		exit(EXIT_FAILURE);
 	}
 
@@ -55,14 +55,14 @@ int main(int arc, char **arv)
 
 	while ((flag = getline(&lineptr, &n, fp) != -2))
 	{
-		monty.ln++;
+		monty.line_num++;
 		opcode = strtok(lineptr, DELIM);
 		if (opcode)
 		{
 			func = get_ops(opcode);
 			if (!func)
 			{
-				dprint(2, "L%d: unknown instruction %s\n", monty.line_num, opcode);
+				dprintf(2, "L%d: unknown instruction %s\n", monty.line_num, opcode);
 				exit(EXIT_FAILURE);
 			}
 			monty.arg = strtok(NULL, DELIM);

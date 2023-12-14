@@ -57,7 +57,7 @@ void (*get_ops(char *))(stack_t **, unsigned int);
 void init_monty(void);
 
 /* in utility.c */
-int _isidigit(char *);
+int _isdigit(char *);
 
 extern monty_t monty;
 monty_t monty;
