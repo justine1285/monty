@@ -31,7 +31,7 @@ void push(stack_t **stack, unsigned int line_num)
 		(*stack) = fresh_node;
 		return;
 	}
-
+	/* if stack is not NULL */
 	fresh_node->next = (*stack);
 	(*stack)->prev = fresh_node;
 	(*stack) = fresh_node;
@@ -108,12 +108,12 @@ void swap(stack_t **stack, unsigned int line_num)
 		exit(EXIT_FAILURE);
 	}
 	temp = (*stack)->next;
-	if (temp->next)
+	if (temp->next) /* when stack contains more than 2 element */
 	{
 		(*stack)->next = temp->next;
 		temp->next->prev = *stack;
 	}
-	else
+	else /* when stack contains only two elements */
 		(*stack)->next = NULL;
 	(*stack)->prev = temp;
 	temp->next = *stack;
